@@ -41,5 +41,14 @@ namespace ProjetIncident.Core.Model
         public Incident()
         {
         }
-    }
+
+        public Incident(string incident){
+            this.Description = incident;
+        }
+
+		public override string ToString()
+		{
+            return this.Description;
+		}
+	}
 }

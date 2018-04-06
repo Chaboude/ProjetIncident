@@ -7,50 +7,53 @@
 
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="2.5.0.122203" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="2.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.0.1" />
     <PackageReference Include="Xamarin.Forms.Maps" Version="2.5.0.122203" />
+    <PackageReference Include="Xam.Plugin.Media" Version="3.1.3" />
+    <PackageReference Include="Plugin.Permissions" Version="2.2.1" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="App.xaml" />
-    <EmbeddedResource Include="View\HomePage.xaml">
+    <EmbeddedResource Include="Views\HomePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Add_Formulaire.xaml">
+      <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\MainMenuPage.xaml">
+    <EmbeddedResource Include="Views\ConnectionPage.xaml">
+      <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\SettingsPage.xaml">
+    <EmbeddedResource Include="Views\MasterDetailPageNavigation.xaml">
+      <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\LoginPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Remove="View\MenuPage.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="App.xaml.cs">
-      <DependentUpon>*.xaml</DependentUpon>
-    </Compile>
-    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="View\HomePage.xaml.cs">
-      <DependentUpon>*.xaml</DependentUpon>
-    </Compile>
-    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="View\MainMenuPage.xaml.cs">
-      <DependentUpon>*.xaml</DependentUpon>
-    </Compile>
-    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="View\SettingsPage.xaml.cs">
-      <DependentUpon>*.xaml</DependentUpon>
-    </Compile>
-    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="View\LoginPage.xaml.cs">
-      <DependentUpon>*.xaml</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Model\" />
     <Folder Include="DataAccess\" />
     <Folder Include="ViewModel\" />
-    <Folder Include="View\" />
-    <Folder Include="Converters\" />
+    <Folder Include="Views\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Views\HomePage.xaml" />
+    <None Remove="Views\Add_Formulaire.xaml" />
+    <None Remove="Views\ConnectionPage.xaml" />
+    <None Remove="Views\NavigationHome.xaml" />
+    <None Remove="Views\MasterDetailPageNavigation.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Views\MasterDetailPageNavigation.xaml.cs">
+      <DependentUpon>MasterDetailPageNavigation.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\MainPage.cs">
+      <DependentUpon>MasterDetailPageNavigation.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\MasterDetailPageNavigation.cs">
+      <DependentUpon>MasterDetailPageNavigation.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 </Project>

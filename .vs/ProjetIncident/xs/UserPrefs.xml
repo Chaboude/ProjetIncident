@@ -1,0 +1,27 @@
+﻿<Properties StartupConfiguration="{8825DD83-EE17-40C6-A632-FB2E45791BA2}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ProjetIncident.Core/ViewModel/NavigationDrawerViewModel.cs">
+    <Files>
+      <File FileName="ProjetIncident.Core/Views/MasterDetailPageNavigation.cs" Line="33" Column="1" />
+      <File FileName="ProjetIncident.Core/ViewModel/AddIncidentViewModel.cs" Line="36" Column="10" />
+      <File FileName="ProjetIncident.Core/ViewModel/BaseViewModel.cs" Line="17" Column="54" />
+      <File FileName="ProjetIncident.Core/Views/Add_Formulaire.xaml.cs" Line="27" Column="167" />
+      <File FileName="ProjetIncident.Core/Views/ConnectionPage.xaml.cs" Line="16" Column="10" />
+      <File FileName="ProjetIncident.Core/ViewModel/ConnectionPageViewModel.cs" Line="8" Column="41" />
+      <File FileName="ProjetIncident.Core/Views/HomePage.xaml.cs" Line="14" Column="10" />
+      <File FileName="iOS/Main.cs" Line="17" Column="1" />
+      <File FileName="ProjetIncident.Core/App.xaml.cs" Line="1" Column="1" />
+      <File FileName="ProjetIncident.Core/ViewModel/NavigationDrawerViewModel.cs" Line="5" Column="21" />
+      <File FileName="ProjetIncident.Core/ViewModel/ProjetIncidentViewModel.cs" Line="1" Column="1" />
+      <File FileName="ProjetIncident.Core/Views/MasterDetailPageNavigation.xaml" Line="64" Column="20" />
+      <File FileName="ProjetIncident.Core/ViewModel/HomePageViewModel.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.ProjetIncident.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.34743975-B103-4064-B735-A34BD7751851" />
+  <MonoDevelop.Ide.ItemProperties.ProjetIncident.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.4df1ba4d1154af95" AndroidDesignerPreferredTheme="Theme.DeviceDefault.NoActionBar.Fullscreen" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="ProjetIncident.Core.Views.HomePage"
+    Title="Liste des Incidents">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="8*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <ListView Grid.Row="0" ItemsSource="{Binding CategoryIncident}"></ListView>
+        <Button Grid.Row="1" Text="Ajouter un incident" Clicked="Redirect_Add"></Button>
+    </Grid>
+</ContentPage>

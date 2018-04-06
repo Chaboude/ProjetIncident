@@ -1,33 +1,39 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using ProjetIncident.Core.View;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
+using ProjetIncident.Core.Views;
 
 namespace ProjetIncident.Core
 {
-	public partial class App : Application
-	{
-		public App ()
-		{
-			InitializeComponent();
-            MainPage = new LoginPage();
-		}
+    public partial class App : Application
+    {
+        public App()
+        {
+            InitializeComponent();
 
-		protected override void OnStart ()
-		{
-			// Handle when your app starts
-		}
+            MainPage = new ConnectionPage();
+        }
 
-		protected override void OnSleep ()
-		{
-			// Handle when your app sleeps
-		}
+        protected override void OnStart()
+        {
+            // Handle when your app starts
+        }
 
-		protected override void OnResume ()
-		{
-			// Handle when your app resumes
-		}
-	}
+        protected override void OnSleep()
+        {
+            // Handle when your app sleeps
+        }
+
+        protected override void OnResume()
+        {
+            // Handle when your app resumes
+        }
+
+        public async static void ShowError(string error, bool closeApp = true)
+        {
+            await App.Current.MainPage.DisplayAlert("Erreur", error, "OK"); if (closeApp)
+            {
+                var manager = DependencyService.Get<IApplicationManager>();
+                manager?.CloseApplication();
+            }
+        }
+    }
 }

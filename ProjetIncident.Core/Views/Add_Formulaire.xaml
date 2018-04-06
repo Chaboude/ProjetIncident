@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="ProjetIncident.Core.Views.Add_Formulaire" 
+             Title="Ajouter un incident"
+             BackgroundColor="#C0C5FF">
+	<Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1.5*"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="0.4*"></RowDefinition>
+            <RowDefinition Height="2*"></RowDefinition>
+            <RowDefinition Height="2*"></RowDefinition>
+            <RowDefinition Height="0.5*"></RowDefinition>
+            <RowDefinition Height="0.5*"></RowDefinition>
+            <RowDefinition Height="0.5*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Image Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Source="incident.png" Margin="0, 20, 0, 0"></Image>
+        <Entry Text="{Binding Titre}" Placeholder="Titre" Grid.Row="1" Grid.Column="0" Margin="10, 15, 0, 0"></Entry>
+        <Picker SelectedItem="{Binding CategoryIncident}" ItemsSource="{Binding CategoriesIncident}" Grid.Row="1" Grid.Column="1" Margin="0, 15, 10, 0"></Picker>
+        <Label Text="Description :" Grid.Row="2" Grid.Column="0" Margin="10, 10, 0, 0"></Label>
+        <Editor Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Margin="10, 0, 10, 0"></Editor>
+        <Image x:Name="PhotoImage" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2"></Image>
+        <Button Text="Ajouter une Photo" x:Name="CameraButton" Grid.Row="5" Grid.ColumnSpan="2" HorizontalOptions="Center" Margin="10, 0, 10, 20"></Button>
+        <Button Text="Ajouter une Localisation" Grid.Row="6" Grid.ColumnSpan="2" HorizontalOptions="Center" Margin="10, 0, 10, 20"></Button>
+        <Button Text="Valider" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" HorizontalOptions="Center" Command="{Binding AjouterIncident}" Margin="10, 0, 10, 20"></Button>
+    </Grid>
+</ContentPage>

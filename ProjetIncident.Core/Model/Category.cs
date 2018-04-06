@@ -23,5 +23,14 @@ namespace ProjetIncident.Core.Model
         public Category()
         {
         }
-    }
+
+        public Category(string label){
+            this.Label = label;
+        }
+
+		public override string ToString()
+		{
+            return this.Label;
+		}
+	}
 }

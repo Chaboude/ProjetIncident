@@ -15,14 +15,21 @@ namespace ProjetIncident.Droid
     {
         protected override void OnCreate(Bundle bundle)
         {
-            TabLayoutResource = Resource.Layout.Tabbar;
-            ToolbarResource = Resource.Layout.Toolbar;
-
-            base.OnCreate(bundle);
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
 
+            TabLayoutResource = Resource.Layout.Tabbar;
+            ToolbarResource = Resource.Layout.Toolbar;
+            Plugin.CurrentActivity.CrossCurrentActivity.Current.Activity = this;
+
+            base.OnCreate(bundle);
+
             LoadApplication(new Core.App());
         }
-    }
+
+		public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Permission[] grantResults)
+		{
+            Plugin.Permissions.PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+		}
+	}
 }

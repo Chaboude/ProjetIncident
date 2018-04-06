@@ -7,42 +7,33 @@ namespace ProjetIncident.Core.ViewModel
 {
     public abstract class BaseViewModel : INotifyPropertyChanged
     {
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        private Dictionary<string, object> _propertyValues;
-
-
-
         public BaseViewModel()
         {
-            _propertyValues = new Dictionary<string, object>();
+            propertyValues = new Dictionary<string, object>();
         }
 
-        public virtual object GetProperty([CallerMemberName] string propertyName = null, object defaultValue = null)
-        {
-            if (_propertyValues.ContainsKey(propertyName)) return _propertyValues[propertyName];
-            return defaultValue;
-        }
-        public virtual bool SetProperty<T>(T newValue, [CallerMemberName] string propertyName = null)
-        {
-            object current = GetProperty(propertyName);
+        public event PropertyChangedEventHandler PropertyChanged;
 
-            if ((current == null && newValue == null) ||
-                (current != null && EqualityComparer<T>.Default.Equals((T)current, newValue)))
-            {
-                return false;
+        protected Dictionary<String, object> propertyValues;
+
+        protected T GetProperty<T>([CallerMemberName] string propertyName = null){
+            if(propertyValues.ContainsKey(propertyName))
+                return (T)propertyValues[propertyName];
+            return default(T);
+        }
+
+        protected bool SetProperty<T>(T value, [CallerMemberName] string propertyName = null){
+            if(!EqualityComparer<T>.Default.Equals(GetProperty<T>(propertyName), value)){
+                propertyValues[propertyName] = value;
+                OnPropertyChanged(propertyName);
+                return true;
             }
-
-            _propertyValues[propertyName] = newValue;
-            OnPropertyChanged(propertyName);
-
-            return true;
+            return false;
         }
 
-        public virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        public void OnPropertyChanged([CallerMemberName]string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
-
     }
 }

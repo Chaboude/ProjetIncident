@@ -11,7 +11,7 @@ using System;
 
 namespace ProjetIncident.Core.Migrations
 {
-    [DbContext(typeof(IncidentDbContext))]
+    [DbContext(typeof(IncidentsDBContext))]
     partial class IncidentDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

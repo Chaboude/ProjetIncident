@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MSCommunity_Xamarin"
+             x:Class="ProjetIncident.Core.Views.MasterDetailPageNavigation">
+
+  <MasterDetailPage.Master>
+    <ContentPage Title="Menu"
+                 BackgroundColor="#C0C5FF">
+
+      <StackLayout Orientation="Vertical">
+        <StackLayout BackgroundColor="#C0E5ff"
+                     HeightRequest="100">
+
+           <Image Source="{Binding ProfilPicture}"
+                  WidthRequest="40"
+                  HeightRequest="40"/>
+
+            <Label Text="{Binding ProfilName}"
+                   FontSize="Medium"
+                   TextColor="Black" />
+        </StackLayout>
+
+        <ListView x:Name="navigationDrawerList"
+                  RowHeight="60"
+                  ItemsSource="{Binding menuList}"
+                  SeparatorVisibility="None"
+                  BackgroundColor="#C0C5FF"
+                  ItemSelected="OnMenuItemSelected">
+
+          <ListView.ItemTemplate>
+            <DataTemplate>
+              <ViewCell>
+                
+                <StackLayout VerticalOptions="FillAndExpand"
+                             Orientation="Horizontal"
+                             Padding="20,10,0,10"
+                             Spacing="20">
+
+                  <Image Source="{Binding IconSource}"
+                         WidthRequest="40"
+                         HeightRequest="40"
+                         VerticalOptions="Center" />
+
+                  <Label Text="{Binding Title}"
+                         FontSize="Medium"
+                         VerticalOptions="Center"
+                         TextColor="Black"/>
+                </StackLayout>
+              </ViewCell>
+            </DataTemplate>
+          </ListView.ItemTemplate>
+        </ListView>
+      </StackLayout>
+
+    </ContentPage>
+  </MasterDetailPage.Master>
+
+  <MasterDetailPage.Detail>
+    <NavigationPage>
+
+    </NavigationPage>
+  </MasterDetailPage.Detail>
+</MasterDetailPage>
