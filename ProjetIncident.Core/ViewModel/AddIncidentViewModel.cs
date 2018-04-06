@@ -39,7 +39,7 @@ namespace ProjetIncident.Core.ViewModel
 
             AjouterIncident = new Command(async () =>
             {
-                if (!(Titre.Equals("") || CategoryIncident.Equals("")))
+                if (!(Titre == null || CategoryIncident == null))
                 {
                     Application.Current.MainPage = new MasterDetailPageNavigation();
                 }
