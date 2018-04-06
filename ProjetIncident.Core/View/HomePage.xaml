@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ctrl="clr-namespace:ProjetIncident.Core.Controls"
+             xmlns:vm="clr-namespace:ProjetIncident.Core.ViewModel"
+             x:Class="ProjetIncident.Core.View.HomePage">
+    
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0"
+               Text="Votre liste d'incidents est vide" 
+               VerticalOptions="Center" 
+               HorizontalOptions="Center" />
+    </Grid>
+    
+</ContentPage>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="ProjetIncident.Core.View.LoginPage" 
+    BackgroundColor="Teal">
+    <ContentPage.Content>
+        <Grid Margin="10">
+        <Grid.Style>
+            <Style TargetType="Entry">
+                <Setter Property="VerticalOptions" Value="CenterAndExpand"></Setter>
+                <Setter Property="Margin" Value="10"></Setter>
+            </Style>
+        </Grid.Style>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Image Grid.Row="0"
+               Aspect="AspectFit"
+               HorizontalOptions="CenterAndExpand"
+               VerticalOptions="CenterAndExpand"
+               Source="{Binding LoginLogo, Converter={StaticResource imgBase64Converter}}"/>
+        <Entry Grid.Row="2" Placeholder="Username" />
+        <Entry Grid.Row="3" Placeholder="Password" IsPassword="true" />
+        <Button Grid.Row="4"
+                Text="Se connecter"
+                HorizontalOptions="Center"
+                TextColor="White"
+                FontSize="20"
+                Clicked="OnButtonClicked"/>
+    </Grid>
+	</ContentPage.Content>
+</ContentPage>
